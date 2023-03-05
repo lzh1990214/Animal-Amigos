@@ -1,0 +1,195 @@
+<div class="container mt-4">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card p-3 py-4 mt-4">
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary px-2 profile-button"
+                        onclick="window.location.href='/addservice';">Service Request</button>
+                    <button class="btn btn-primary px-2 ms-1 profile-button" type="button" data-bs-toggle="modal"
+                        data-bs-target="#editProfileModal">Edit</button>
+                </div>
+
+                <div class="position-relative">
+                    <div class="text-center position-absolute top-0 start-50 translate-middle mt-0">
+                        <img src="../assets/avatar-2.png" class="rounded-circle" id="img-profile-round">
+                    </div>
+                </div>
+
+                <div class="text-center mt-4" id="profile-info">
+                    <h5 class="mt-0 mb-3 profile-name">{{ first_name }} {{ last_name }}</h5>
+                    <p style="text-transform: capitalize;">Location: {{ address.city }} <span
+                            style="text-transform: uppercase;">{{address.state}}
+                            {{address.country}}</span>
+                    <p>
+                    <p>Email: {{ email }}
+                    <p>
+                    <p>Phone: {{ phone_number }}
+                    <p>
+
+                        <!-- Button Group "Pets", "Services", "Likes" -->
+                    <ul class="nav justify-content-center mt-4">
+                        {{!-- <li class="nav-item">
+                            <p class="mb-0 profile-status-number">10</p>
+                            <a class="nav-link profile-navigation-text" href="#">Pets</a>
+                        </li> --}}
+                        <li class="nav-item">
+                            {{!-- <p class="mb-0 profile-status-number">15</p> --}}
+                            <a class="nav-link active text-decoration-underline profile-navigation-text"
+                                aria-current="page" href="#">My Services</a>
+                        </li>
+                        {{!-- <li class="nav-item ms-5">
+                            <p class="mb-0 profile-status-number">15</p>
+                            <a class="nav-link disabled profile-navigation-text" href="#">Likes</a>
+                        </li> --}}
+                    </ul>
+
+                    <!-- CARDS SECTION START-->
+                    <div class="container mt-5 mb-5">
+
+                        <div class="d-flex justify-content-center row text-start">
+                            <div class="col-md-10">
+                                <!-- CARD 1 - START-->
+                                {{#each services as |service|}}
+                                {{> each-service }}
+                                {{/each}}
+                                <!-- CARD 1 - END -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARDS SECTION END -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- Modal for updating profile (needs to be updated) --}}
+<div class="modal" id="editProfileModal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+                <div class="d-flex justify-content-center row">
+                    <div class="col-md-12">
+                        <div class="row p-2 bg-white">
+
+                            <div class="col-md-3 card petPhotoCard align-items-center">
+
+                                <img class="card-img-top img-fluid rounded-circle proImage"
+                                    src="../assets/avatar-2.png">
+                                {{!-- Cloudinary Upload Start --}}
+                                <form class="row signup-text mb-3 mt-1 ms-5 ps-4" action="/api/upload/" method="post"
+                                    enctype="multipart/form-data">
+                                    <label for="Upload" class="form-label mt-3 fs-6">Upload my Profile Photo</label>
+                                    <div class="col-md-12 mb-3">
+                                        <input type="file" id="proFile2" name="file">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input type="submit" id="submitProPic2">
+                                    </div>
+                                </form>
+                                {{!-- Cloudinary Upload End --}}
+                            </div>
+
+
+                            <!-- Profile update information -->
+                            <div class="col-md-6 mt-1 text-start">
+                                <h5 class="signup-title mb-3">Update my Profile</h5>
+
+                                <!-- form input box to create or update services-->
+                                <form class="edit-service-form row signup-text">
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>First Name</label>
+                                            <input class="form-control" type="text" id="firstName"
+                                                value="{{ first_name }}">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Last Name</label>
+                                            <input class="form-control" type="text" id="lastName"
+                                                value="{{ last_name }}">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Email</label>
+                                            <input class="form-control" type="text" id="email" value="{{ email }}">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Password</label>
+                                            <input class="form-control" type="password" id="password">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Phone Number</label>
+                                            <input class="form-control" type="text" id="phoneNumber">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Address</label>
+                                            <input class="form-control" type="text" id="address">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>City</label>
+                                            <input class="form-control" type="text" class="form-control" type="text"
+                                                id="city">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>State</label>
+                                            <input class="form-control" type="text" class="form-control" type="text"
+                                                id="state">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Zip</label>
+                                            <input class="form-control" type="text" class="form-control" type="text"
+                                                id="zip">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Country</label>
+                                            <input class="form-control" type="text" class="form-control" type="text"
+                                                id="country">
+                                        </div>
+                                    </div>
+                                    {{!-- <div class="d-flex flex-column mt-4 row">
+                                        <button class="px-3 btn btn-sm btn-primary" id="save"
+                                            data-id="{{ id }}">Save</button>
+                                    </div> --}}
+                                </form>
+                            </div>
+
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button class="btn btn-primary mt-2 profile-button" id="saveprofile" data-id="{{ id }}">Save
+                            </button>
+                            <button type="button" class="btn btn-primary mt-2 profile-button"
+                                data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/editProfile.js"></script>

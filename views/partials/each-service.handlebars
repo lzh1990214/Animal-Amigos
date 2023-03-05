@@ -1,0 +1,160 @@
+<div class="card mb-4">
+    <div class="row g-0">
+        <div class="col-md-3 card">
+            <img class="card-img img-fluid serviceImage" src="../assets/Dog.jpg">
+        </div>
+        <div class="col-md-6">
+            <div class="card-body mt-2 ms-2">
+                <p class="mb-2" id="post-date-text">{{ service_date }}</p>
+                <h5 class="mb-3" id="service-title">{{ service_name }}</h5>
+                <p class="mb-3" id="service-description">{{ service_description }}</p>
+                <p id="service-user-location-text">{{ service_location }}</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card-body mt-3">
+                <h4 class="service-points">{{ service_price }}<span class="fs-6">$</span></h4>
+                <p class="mb-2 fw-bold post-date-text">Status: {{ service_status }}</p>
+                {{!-- <p class="mb-2" id="post-date-text">Requester: {{ user.first_name }} {{ user.last_name }}</p> --}}
+                <p class="mb-2 post-date-text">Responder: {{ responder_first_name }} {{ responder_last_name }}</p>
+                <div class="d-grid gap-2 d-md-flex mt-3 mb-3">
+                    <button class="btn btn-primary profile-button me-4" type="button" data-bs-toggle="modal"
+                        data-bs-target="#editModal-{{ id }}" data-id="{{ id }}">Edit</button>
+                    {{!-- <button class="btn btn-primary profile-button" type="button" data-bs-toggle="modal"
+                        data-bs-target="#editModal" data-id="{{ id }}">Edit</button> --}}
+                    {{!-- <button class="btn btn-primary profile-button" type="button">Pay</button> --}}
+                    {{!-- <button class="btn btn-primary me-md-2 profile-button" type="button" id="delete"
+                        data-id="{{ id }}">{{id}}Delete</button> --}}
+                    <button class="btn btn-primary me-md-2 profile-button deleteServiceBtn" type="button"
+                        data-id="{{ id }}">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- CARD 1 - END -->
+
+<!-- Edit service Modal -->
+<div class="modal" id="editModal-{{ id }}">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+                <div class="d-flex justify-content-center row">
+                    <div class="col-md-12">
+                        <div class="row p-2 bg-white">
+
+                            <div class="col-md-3 card petPhotoCard align-items-center">
+                                <img class="card-img-top img-fluid rounded-circle proImage" src="../assets/Cat.jpg">
+                                {{!-- Cloudinary Upload Start --}}
+                                <form class="row signup-text mb-3 mt-1 ms-5 ps-4" action="/api/upload/" method="post"
+                                    enctype="multipart/form-data">
+                                    <label for="Upload" class="form-label mt-3 fs-6">Upload my Pet Photo</label>
+                                    <div class="col-md-12 mb-3">
+                                        <input type="file" id="proFile" name="file">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input type="submit" id="submitPetPic">
+                                    </div>
+                                </form>
+                                {{!-- Cloudinary Upload End --}}
+                            </div>
+
+                            <!-- comments information -->
+                            <div class="col-md-6 mt-1 text-start">
+                                <p class="mb-2" id="post-date-text">Date: {{ service_date }}</p>
+                                <h5 class="mb-3" id="service-title">Title: {{ service_name }}</h5>
+                                <p class="mb-3" id="service-description">Description: {{ service_description }}</p>
+                                <p id="service-user-location-text">Location: {{ service_location }}</p>
+
+                                <!-- form input box to create or update services-->
+                                <form class="edit-service-form row signup-text">
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Service Name</label>
+                                            <input class="form-control" type="text" id="serviceName"
+                                                value="{{ service_name }}">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Service Description</label>
+                                            <input class="form-control" type="text" id="serviceDescription"
+                                                value="{{ service_description }}">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Service Price</label>
+                                            <input class="form-control" type="text" id="servicePrice"
+                                                value="{{ service_price }}">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Service Status</label>
+                                            <input class="form-control" type="text" id="serviceStatus"
+                                                value="{{ service_status }}">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Service Date</label>
+                                            <input class="form-control" type="text" id="serviceDate"
+                                                value="{{ service_date }}">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Service Time</label>
+                                            <input class="form-control" type="text" id="serviceTime"
+                                                value="{{ service_time }}">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Service Location</label>
+                                            <input class="form-control" type="text" id="serviceLocation"
+                                                value="{{ service_location }}">
+                                        </div>
+                                    </div>
+                                    {{!-- <div class="d-flex flex-column mt-4 row">
+                                        <button class="px-3 btn btn-sm btn-primary" id="save"
+                                            data-id="{{ id }}">Save</button>
+                                    </div> --}}
+                                </form>
+
+                            </div>
+
+                            <!-- side information and buttons -->
+                            <div class="col-md-3">
+                                <div class="card-body mt-0">
+                                    <h4 class="service-points">{{ service_price }}<span class="fs-6">$</span></h4>
+                                    <p class="mb-2 fw-bold post-date-text">Status: {{ service_status }}</p>
+                                    {{!-- <p class="mb-2 post-date-text">Requester: Jennilee</p> --}}
+                                    <p class="mb-2 post-date-text">Responder: {{ responder_first_name }} {{
+                                        responder_last_name }}</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button class="btn btn-primary mt-2 profile-button" type="button" id="save"
+                                data-id="{{ id }}">Save</button>
+                            <button class="btn btn-primary mt-2 profile-button" type="button"
+                                data-bs-dismiss="modal">Cancel</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal END -->
+
+<script src="/js/editService.js"></script>

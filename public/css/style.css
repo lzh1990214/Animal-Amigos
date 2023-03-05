@@ -1,0 +1,212 @@
+:root {
+    --logo-title-font-family: 'Solway', serif;
+    --title-font-family: 'Montserrat', sans-serif;
+    --landing-title-color: #69777E;
+    --landing-background: #CFD9DC;
+    --orange-button: #E6824A;
+    --brown-button: #BD8D75;
+    --cat-grey: #9F9F97;
+    --dog-brown: #745042;
+}
+
+* {
+    font-family: var(--title-font-family);
+}
+
+body {
+    background-color: #CFD9DC;
+}
+
+.btn {
+    background-color: var(--orange-button);
+    border: var(--orange-button);
+}
+
+#btn-signup {
+    background-color: var(--orange-button);
+    border: var(--orange-button);
+    width: 9rem;
+}
+
+#btn-login {
+    background-color: var(--brown-button);
+    border: var(--brown-button);
+    width: 9rem;
+}
+
+/* navbar logo */
+.navbar-brand {
+    font-family: var(--logo-title-font-family);
+    font-weight: 800;
+    color: var(--landing-title-color);
+}
+
+#nav-text {
+    color: var(--landing-title-color);
+}
+
+/* landing page style */
+.landing-background {
+    background-color: #CFD9DC;
+}
+
+#landing-title {
+    font-family: var(--logo-title-font-family);
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: var(--landing-title-color);
+}
+
+#landing-description {
+    font-family: var(--logo-title-font-family);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--landing-title-color);
+}
+
+#landing-bg-img {
+    background-color: #CFD9DC;
+}
+
+#landing-card {
+    border: 0;
+}
+
+/* profile_service page style */
+
+#img-profile-nav-round {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+#img-profile-round {
+    width: 11rem;
+    height: 11rem;
+}
+
+.img-service-square {
+    width: 12rem;
+    height: 12rem;
+}
+
+#profile-info {
+    padding-top: 5rem;
+    color: var(--landing-title-color);
+}
+
+.profile-name {
+    font-family: var(--title-font-family);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.post-date-text {
+    color: var(--cat-grey);
+    font-weight: 300;
+}
+
+#post-date-text {
+    color: var(--cat-grey);
+    font-weight: 300;
+}
+
+#service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--landing-title-color);
+}
+
+#service-description {
+    font-weight: 400;
+    color: var(--landing-title-color);
+}
+
+#service-user-location-text {
+    color: var(--cat-grey);
+    font-weight: 300;
+}
+
+.profile-button {
+    background-color: var(--brown-button);
+    border: var(--brown-button);
+}
+
+.profile-navigation-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.profile-status-number {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.service-likes {
+    color: var(--orange-button);
+    font-weight: 700;
+}
+
+.service-points {
+    color: var(--orange-button);
+    font-weight: 600;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    position: relative;
+    width: max-content
+}
+
+.content img {
+    display: block;
+}
+
+.content .fa-camera {
+    position: absolute;
+    bottom: 87.5%;
+    right: 42.5%;
+    color: white;
+}
+
+.signup-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--landing-title-color);
+}
+
+.signup-text {
+    font-size: 0.75rem;
+    color: var(--landing-title-color);
+}
+
+.btn-orange {
+    background-color: var(--orange-button);
+    border: var(--orange-button);
+    width: 9rem;
+}
+
+.btn-brown {
+    background-color: var(--brown-button);
+    border: var(--brown-button);
+    width: 9rem;
+}
+
+.serviceImage {
+    object-fit: cover;
+    height: 100%;
+}
+
+.proImage {
+    object-fit: cover;
+    height: 12rem;
+    width: 12rem;
+
+}
+
+.petPhotoCard {
+    border: 0rem;
+}

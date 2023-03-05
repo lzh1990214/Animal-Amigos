@@ -1,0 +1,206 @@
+<body style="background-color: #CFD9DC">
+    {{!-- This is the landing page with logo, login and signup buttons; users cannot return to this page unless signed
+    out --}}
+
+    <!-- main logo, description, button and background image (need to relink image path in handlebar) -->
+    <main class="landing-background">
+        <div class="card mx-auto text-center" style="width: 45rem;" id="landing-card">
+            <img src="../assets/Animal-circle.png" class="card-img" alt="landing-bg-img" id="landing-bg-img">
+            <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center mt-5">
+                <p class="card-title" id="landing-title">Amimal Amigos</p>
+                <p class="card-text mb-4" id="landing-description">Join our furmily today to meet more friends and
+                    experience
+                    pet-sitting services!</p>
+                <section class="container text-center mt-3">
+                    {{!-- <button type="button" class="btn btn-secondary me-3" id="btn-signup"
+                        onclick="window.location.href='/signup';">Sign-up</button> --}}
+                    <button type="button" class="btn btn-secondary me-3" id="btn-signup" data-bs-toggle="modal"
+                        data-bs-target="#SignUpModal">Sign-up</button>
+                    {{!-- <button type="button" class="btn btn-secondary ms-3" id="btn-login"
+                        onclick="window.location.href='/login';">Log-in</button> --}}
+                    <button type="button" class="btn btn-secondary ms-3" id="btn-login" data-bs-toggle="modal"
+                        data-bs-target="#logInModal">Log-in</button>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="SignUpModal">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                    <div class="d-flex justify-content-center row">
+                        <div class="col-md-10">
+                            <div class="row p-2 bg-white">
+
+                                <div class="col-lg-12 mt-1 text-start">
+                                    <h5 class="signup-title mb-4">Sign up for a free account</h5>
+
+                                    {{!-- ZL:Cloudinary Upload form and buttons --}}
+                                    <form class="row signup-text mb-3 " action="/api/upload/" method="post"
+                                        enctype="multipart/form-data">
+                                        <label for="Upload" class="form-label">Upload a Profile Picture</label>
+                                        <div class="col-md-6">
+                                            <input type="file" id="proFile" name="file">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="submit" id="submitProPic">
+                                        </div>
+                                    </form>
+                                    {{!-- Cloudinary Upload End --}}
+
+                                    <!-- form input box to create or update services-->
+                                    <form class="signup-form row g-2 signup-text">
+                                        <div class="col-md-6">
+                                            <label for="firstName" class="form-label">First Name</label>
+                                            <input type="text" class="form-control" id="firstName">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="lastName" class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" id="lastName">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="password">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                                            <input type="text" class="form-control" id="phoneNumber">
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="inputs">
+                                                <label class="form-label">Security Question 1</label>
+                                                <select class="form-control form-select" id="question1"
+                                                    placeholder="Choose a question*">
+                                                    <option value="What is your mothers maiden name?">What is your
+                                                        mothers
+                                                        maiden name?</option>
+                                                    <option value="What was the color of your first car?">What was the
+                                                        color
+                                                        of your first car?
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="inputAnswer1" class="form-label">Answer 1</label>
+                                            <input type="text" class="form-control" id="answer1"
+                                                placeholder="Type answer for security question 1...">
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="inputs">
+                                                <label class="form-label">Security Question 2</label>
+                                                <select class="form-control form-select" id="question2"
+                                                    placeholder="Choose a question*">
+                                                    <option value="What is your paternal
+                                                        grandfathers middle name?">What is your
+                                                        paternal
+                                                        grandfathers middle name?</option>
+                                                    <option value="What is your
+                                                        favorite food?">What is your
+                                                        favorite food?
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="inputAnswer2" class="form-label">Answer 2</label>
+                                            <input type="text" class="form-control" id="answer2"
+                                                placeholder="Type answer for security question 2...">
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="inputs">
+                                                <label class="form-label">Security Question 3</label>
+                                                <select class="form-control form-select" id="question3"
+                                                    placeholder="Choose a question*">
+                                                    <option value="What is your
+                                                        favorite
+                                                        ice cream flavor?">What is your
+                                                        favorite
+                                                        ice cream flavor?
+                                                    </option>
+                                                    <option value="What is your
+                                                        favorite sport?">What is your
+                                                        favorite sport?
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="inputAnswer3" class="form-label">Answer 3</label>
+                                            <input type="text" class="form-control" id="answer3"
+                                                placeholder="Type answer for security question 3...">
+                                        </div>
+                                        <div class="d-grid gap-2 d-md-block mt-4">
+                                            <button class="btn btn-primary mt-2 me-3 btn-orange"
+                                                type="submit">Register</button>
+                                            <button class="btn btn-primary mt-2 btn-brown" type="button"
+                                                data-bs-dismiss="modal">Cancel</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SignUp Modal End -->
+
+    <!-- Log-in Modal -->
+    <div class="modal" id="logInModal">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center row">
+                        <div class="col-md-10">
+                            <div class="row p-2 bg-white">
+                                <div class="col-xl-12 mt-1 text-start">
+                                    <h5 class="signup-title mb-4">Sign in to your account</h5>
+
+                                    <!-- form input box to create or update services-->
+                                    <form class="login-form row g-2 signup-text ">
+                                        <div class="col-sm-12">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="text" class="form-control" id="emailLogin" required="required">
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="text" class="form-control" id="passwordLogin"
+                                                required="required">
+                                        </div>
+
+                                        <div class="d-grid gap-2 d-md-block mt-4 mb-4">
+                                            <button class="btn btn-primary mt-2 me-3 btn-orange"
+                                                type="submit">Submit</button>
+                                            <button class="btn btn-primary mt-2 btn-brown" type="button"
+                                                data-bs-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Log-in modal end -->
+
+
+    <script src="./js/signup.js"></script>
+    <script src="./js/login.js"></script>
+</body>

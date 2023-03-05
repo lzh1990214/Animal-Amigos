@@ -1,0 +1,58 @@
+<section class="container text-center">
+    <p>Experience pet-sitting services and events from our furmily and make more friends !</p>
+    <button class="btn btn-primary px-2 profile-button" onclick="window.location.href='/addservice';">Service
+        Request</button>
+</section>
+
+{{!-- <section class="container-fluid position-relative">
+    <div class="row d-flex justify-content-center mt-3"> --}}
+
+        <div class="container mt-5 mb-5">
+
+            <div class="d-flex justify-content-center row text-start">
+                <div class="col-md-10 services-list">
+
+                    {{#each services as |service|}}
+                    <div class="card mb-4">
+                        <div class="row g-0">
+                            <div class="col-md-3 card">
+                                <img class="card-img img-fluid serviceImage" src="../assets/Dog.jpg">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body mt-2 ms-2">
+                                    <p class="mb-2" id="post-date-text">{{ service.service_date }}</p>
+                                    <h5 class="mb-3" id="service-title">{{ service.service_name }}</h5>
+                                    <p class="mb-3" id="service-description">{{ service.service_description }}</p>
+                                    <p id="service-user-location-text">{{ service.service_location }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card-body mt-3">
+                                    <h4 class="service-points">{{ service.service_price }}<span class="fs-6">$</span>
+                                    </h4>
+                                    <p class="mb-2 fw-bold post-date-text">Status: {{ service.service_status }}</p>
+                                    <p class="mb-2 post-date-text">Requester: {{ user.first_name }} {{
+                                        user.last_name }}</p>
+                                    <p class="mb-2 post-date-text">Responder: {{ service.responder_first_name }} {{
+                                        responder_last_name }}</p>
+                                    {{!-- <p id="service_id">Here : {{ id }}</p> --}}
+                                    <div class="d-grid gap-2 d-md-flex mt-3 mb-3">
+                                        <button class="btn btn-primary profile-button" id="accept" type="button"
+                                            data-id="{{ service.id }}">Accept</button>
+                                        {{!-- <button class="btn btn-primary profile-button" type="button">Pay</button>
+                                        --}}
+                                        <button class="btn btn-primary me-md-2 profile-button"
+                                            type="button">Contact</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+
+                </div>
+            </div>
+        </div>
+</section>
+
+<script src="/js/acceptService.js"></script>
