@@ -56,11 +56,11 @@ Services.init(
             allowNull: false,
         },
         service_date: {
-            type: DataTypes.DATE,
+            type: DataTypes.CHAR,
             allowNull: false,
         },
         service_time: {
-            type: DataTypes.TIME,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         service_location: {
