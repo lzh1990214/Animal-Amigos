@@ -56,7 +56,7 @@ Services.init(
             allowNull: false,
         },
         service_date: {
-            type: DataTypes.DATE,
+            type: DataTypes.CHAR,
             allowNull: false,
         },
         service_time: {
