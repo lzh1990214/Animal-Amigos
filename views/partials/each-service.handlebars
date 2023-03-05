@@ -5,7 +5,7 @@
         </div>
         <div class="col-md-6">
             <div class="card-body mt-2 ms-2">
-                <p class="mb-2" id="post-date-text">{{ service_date }}</p>
+                <p class="mb-2" id="post-date-text">{{ service_date }} {{ service_time }}</p>
                 <h5 class="mb-3" id="service-title">{{ service_name }}</h5>
                 <p class="mb-3" id="service-description">{{ service_description }}</p>
                 <p id="service-user-location-text">{{ service_location }}</p>
@@ -18,15 +18,15 @@
                 {{!-- <p class="mb-2" id="post-date-text">Requester: {{ user.first_name }} {{ user.last_name }}</p> --}}
                 <p class="mb-2 post-date-text">Responder: {{ responder_first_name }} {{ responder_last_name }}</p>
                 <div class="d-grid gap-2 d-md-flex mt-3 mb-3">
-                    <button class="btn btn-primary profile-button me-4" type="button" data-bs-toggle="modal"
+                    <button class="btn btn-primary profile-button me-2" type="button" data-bs-toggle="modal"
                         data-bs-target="#editModal-{{ id }}" data-id="{{ id }}">Edit</button>
                     {{!-- <button class="btn btn-primary profile-button" type="button" data-bs-toggle="modal"
                         data-bs-target="#editModal" data-id="{{ id }}">Edit</button> --}}
                     {{!-- <button class="btn btn-primary profile-button" type="button">Pay</button> --}}
                     {{!-- <button class="btn btn-primary me-md-2 profile-button" type="button" id="deleteBtn"
                         data-id="{{ id }}">{{id}}Delete</button> --}}
-                    <button class="btn btn-primary me-md-2 profile-button" type="button" data-id="{{ id }}"
-                        value="DeleteBtn" id="delete">Delete</button>
+                    <button class="btn btn-primary me-md-2 profile-button deleteBtn" type="button" data-id="{{ id }}"
+                        value="deleteBtn" id="delete">Delete</button>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
 
                             <!-- comments information -->
                             <div class="col-md-6 mt-1 text-start">
-                                <p class="mb-2" id="post-date-text">Date: {{ service_date }}</p>
+                                <p class="mb-2" id="post-date-text">Date: {{ service_date }} {{ service_time }}</p>
                                 <h5 class="mb-3" id="service-title">Title: {{ service_name }}</h5>
                                 <p class="mb-3" id="service-description">Description: {{ service_description }}</p>
                                 <p id="service-user-location-text">Location: {{ service_location }}</p>
@@ -102,7 +102,7 @@
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Status</label>
-                                            <select class="form-control form-select" id="status">
+                                            <select class="form-control form-select" id="status" required="required">
                                                 <option value="selected">Choose an option*</option>
                                                 <option value="Active">Active</option>
                                                 <option value="Closed">Closed</option>
@@ -112,17 +112,19 @@
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Date</label>
-
+                                            {{!-- <input class="form-control" type="text" id="serviceDate"
+                                                value="{{ service_date }}" required="required"> --}}
                                             <input class="form-control" type="date" id="serviceDate"
                                                 value="{{ service_date }}" required="required">
-
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
-                                            <label>Service Time</label>
-                                            <input class="form-control" type="text" id="serviceTime"
-                                                value="{{ service_time }}" required="required">
+                                            <label for="serviceTime">Service Time</label>
+                                            {{!-- <input class="form-control" type="text" id="serviceTime"
+                                                value="{{ service_time }}" required="required"> --}}
+                                            <input class="form-control" type="time" placeholder="Enter service time*"
+                                                value="{{ service_time }}" id="serviceTime" required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
@@ -154,10 +156,10 @@
                         </div>
 
                         <!-- Modal footer -->
-                        <div class="modal-footer">
+                        <div class="modal-footer serviceModal">
 
                             <button class="btn btn-primary mt-2 profile-button saveServiceBtn" type="button"
-                                data-id="{{ id }}">Save</button>
+                                value="saveBtn" data-id="{{ id }}" data-id-save="{{id}}">Save</button>
                             <button class="btn btn-primary mt-2 profile-button" type="button"
                                 data-bs-dismiss="modal">Cancel</button>
                         </div>
