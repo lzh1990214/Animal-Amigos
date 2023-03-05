@@ -13,7 +13,7 @@ router.post('/signup', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
       phone_number: req.body.phone_number,
-      profile_picture: req.body.profile_pic,
+      profile_picture: req.body.profile_picture,
     });
 
     await Security.create({
@@ -118,7 +118,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
+
       res.status(200).json({ user: userData, message: 'You are now logged in!' });
     });
 
