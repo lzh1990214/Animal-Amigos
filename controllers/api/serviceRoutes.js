@@ -37,9 +37,6 @@ router.post('/addservice', async (req, res) => {
     try {
         const service = await Service.create({
             requester: req.session.user_id,
-            responder: req.session.user_id,
-            responder_first_name: " ",
-            responder_last_name: " ",
             service_name: req.body.service_name,
             service_description: req.body.service_description,
             service_price: req.body.service_price,
@@ -102,7 +99,6 @@ router.put('/:id', async (req, res) => {
         const service = await Service.update(
             {
                 requester: req.session.user_id,
-                responder: req.session.user_id,
                 service_name: req.body.service_name,
                 service_description: req.body.service_description,
                 service_price: req.body.service_price,
@@ -126,6 +122,8 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     try {
+
+        console.log("&&&&&&&***********((((((((((((((");
         const serviceData = await Service.destroy({
             where: {
                 id: req.params.id

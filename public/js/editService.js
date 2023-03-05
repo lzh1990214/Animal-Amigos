@@ -6,7 +6,7 @@ const editServiceFormHandler = async (event) => {
         const service_name = document.querySelector('#serviceName').value.trim();
         const service_description = document.querySelector('#serviceDescription').value.trim();
         const service_price = document.querySelector('#servicePrice').value.trim();
-        const service_status = document.querySelector('#serviceStatus').value.trim();
+        const service_status = document.querySelector('#status').value.trim();
         const service_date = document.querySelector('#serviceDate').value.trim();
         const service_time = document.querySelector('#serviceTime').value.trim();
         const service_location = document.querySelector('#serviceLocation').value.trim();
@@ -33,7 +33,7 @@ const editServiceFormHandler = async (event) => {
 };
 
 document
-    .querySelector('#save')
+    .querySelector('.saveServiceBtn')
     .addEventListener('click', editServiceFormHandler);
 
 const delButtonHandler = async (event) => {
@@ -58,5 +58,5 @@ const delButtonHandler = async (event) => {
 //     .addEventListener('click', delButtonHandler);
 
 document
-    .getElementsByClassName('deleteServiceBtn')
+    .querySelector('.deleteServiceBtn')
     .addEventListener('click', delButtonHandler);
