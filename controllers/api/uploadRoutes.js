@@ -4,6 +4,7 @@ const uploader = require('../../utils/upload');
 const path = require('path');
 const multer = require('multer');
 const User = require('../../models/User');
+const Service = require('../../models/Services');
 
 
 const storage = multer.diskStorage({
@@ -33,6 +34,17 @@ router.post('/', upload.fields([{ name: 'file' }]), async (req, res) => {
                     id: req.session.user_id,
                 }
             });
+        
+            const service = await Service.update(
+                {
+                    service_picture: url,
+                },
+                {
+                    where: {
+                        user_id: req.session.user_id,
+                    }
+                });
+        
         res.redirect('/profile');
     } catch (error) {
         console.log('uploadRoutes.js error', error);

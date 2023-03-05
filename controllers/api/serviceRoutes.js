@@ -8,10 +8,14 @@ router.get('/', async (req, res) => {
             include: [{ model: User }],
         });
 
+        const user = await User.findOne({ where: { id: req.session.user_id } });
+        const userData = user.get({ plain: true });
+
         const services = servicesData.map((service) => service.get({ plain: true }));
         res.render('services', {
             services,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            profile_picture: userData.profile_picture
         });
     } catch (err) {
         res.status(500).json(err);
