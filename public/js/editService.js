@@ -54,9 +54,9 @@ const delButtonHandler = async (event) => {
     }
 };
 
-// document
-//   .querySelector('#delete')
-//    .addEventListener('click', delButtonHandler);
+document
+    .querySelector('#delete')
+    .addEventListener('click', delButtonHandler);
 
 
 // querySelector selecting the entire card list because only ID selector is functional, Class selector is not reliable
@@ -64,7 +64,7 @@ const delButtonHandler = async (event) => {
 //     .querySelector('#cardsList')
 //     .addEventListener('click', delButtonHandler);
 
-document
-    .querySelector('.deleteServiceBtn')
-    .addEventListener('click', delButtonHandler);
+// document
+//     .querySelector('.deleteServiceBtn')
+//     .addEventListener('click', delButtonHandler);
 
