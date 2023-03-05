@@ -18,9 +18,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 var url = '';
 
-router.post('/', upload.fields([{ name: 'file' }]), async (req, res, next) => {
+router.post('/', upload.fields([{ name: 'file' }]), async (req, res) => {
     try {
-        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' + req.session.user_id)
         uploadedFile = req.files.file[0];
         filename = uploadedFile.filename;
         type = 'pfp';
@@ -34,17 +33,12 @@ router.post('/', upload.fields([{ name: 'file' }]), async (req, res, next) => {
                     id: req.session.user_id,
                 }
             });
-        res.render('profile', user);
-
-
+        res.redirect('/profile');
     } catch (error) {
         console.log('uploadRoutes.js error', error);
         throw new Error(error);
     }
-
 });
-
-
 
 router.get('/', async (req, res) => {
     res.render('upload');
