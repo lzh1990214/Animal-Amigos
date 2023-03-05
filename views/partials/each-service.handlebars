@@ -92,18 +92,30 @@
                                                 value="{{ service_price }}" required="required">
                                         </div>
                                     </div>
-                                    <div class="mb-3">
+                                    {{!-- <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Status</label>
                                             <input class="form-control" type="text" id="serviceStatus"
                                                 value="{{ service_status }}" required="required">
                                         </div>
+                                    </div> --}}
+                                    <div class="mb-3">
+                                        <div class="inputs">
+                                            <label>Service Status</label>
+                                            <select class="form-control form-select" id="status">
+                                                <option value="selected">Choose an option*</option>
+                                                <option value="Active">Active</option>
+                                                <option value="Closed">Closed</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Date</label>
-                                            <input class="form-control" type="text" id="serviceDate"
+
+                                            <input class="form-control" type="date" id="serviceDate"
                                                 value="{{ service_date }}" required="required">
+
                                         </div>
                                     </div>
                                     <div class="mb-3">
@@ -143,7 +155,9 @@
 
                         <!-- Modal footer -->
                         <div class="modal-footer">
-                            <button class="btn btn-primary mt-2 profile-button saveBtn" type="button" id="save"
+
+                            <button class="btn btn-primary mt-2 profile-button saveServiceBtn" type="button"
+
                                 data-id="{{ id }}">Save</button>
                             <button class="btn btn-primary mt-2 profile-button" type="button"
                                 data-bs-dismiss="modal">Cancel</button>

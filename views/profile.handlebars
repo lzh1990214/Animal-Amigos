@@ -51,7 +51,7 @@
                             <div class="col-md-10" id="cardsList">
                                 <!-- CARD 1 - START-->
                                 {{#each services as |service|}}
-                                {{> each-service }}
+                                {{> each-service}}
                                 {{/each}}
                                 <!-- CARD 1 - END -->
                             </div>
@@ -133,8 +133,9 @@
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Phone Number</label>
-                                            <input class="form-control" type="text" id="phoneNumber"
-                                                required="required">
+
+                                            <input class="form-control" type="text" id="phoneNumber" value="{{ phone_number }}">
+
                                         </div>
                                     </div>
                                     <div class="mb-3">

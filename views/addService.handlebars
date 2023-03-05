@@ -18,13 +18,25 @@
                         <div class="inputs"> <label>Service Price*</label> <input class="form-control" type="text"
                                 id="servicePrice" placeholder="Enter service price*" required="required"> </div>
                     </div>
-                    <div class="col-md-12 mb-3">
+                    {{!-- <div class="col-md-12 mb-3">
                         <div class="inputs"> <label>Service Status*</label> <input class="form-control" type="text"
-                                id="serviceStatus" placeholder="Enter service status*" required="required"> </div>
+
+                                id="serviceStatus" placeholder="Enter service status*"> </div>
+                    </div> --}}
+                    <div class="col-md-12 mb-3">
+                        <div class="inputs">
+                            <label>Service Status</label>
+                            <select class="form-control form-select" id="status">
+                                <option value="disabled selected">Choose an option*</option>
+                                <option value="Active">Active</option>
+                                <option value="Closed">Closed</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-md-12 mb-3">
-                        <div class="inputs"> <label>Service Date*</label> <input class="form-control" type="text"
-                                id="serviceDate" placeholder="Enter service date*" required="required"> </div>
+                        <div class="inputs"> <label>Service Date*</label> <input class="form-control" type="date"
+                                id="serviceDate" placeholder="Enter service date*"> </div>
+                    
                     </div>
                     <div class="col-md-12 mb-3">
                         <div class="inputs"> <label>Service Time*</label> <input class="form-control" type="text"

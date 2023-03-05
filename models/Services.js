@@ -60,7 +60,7 @@ Services.init(
             allowNull: false,
         },
         service_time: {
-            type: DataTypes.TIME,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         service_location: {
