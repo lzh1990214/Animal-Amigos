@@ -13,7 +13,7 @@ router.post('/signup', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
       phone_number: req.body.phone_number,
-      profile_picture: req.body.profile_pic,
+      profile_picture: req.body.profile_picture,
     });
 
     await Security.create({
