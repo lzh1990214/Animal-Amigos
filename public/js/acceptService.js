@@ -4,6 +4,7 @@ var acceptServiceHandler = async (event) => {
 
         var serviceId = event.target.getAttribute('data-id');
 
+
         // var id = 3;
 
         if (serviceId) {
@@ -15,8 +16,11 @@ var acceptServiceHandler = async (event) => {
                 });
 
             if (response.ok) {
-                // If successful, redirect the browser to the profile page
+
+                // If successful, redirect the browser to the services page
                 document.location.replace('/api/services');
+
+
             } else {
                 alert(response.statusText);
             }
