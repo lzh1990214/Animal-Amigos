@@ -20,7 +20,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="card-body mt-2 ms-2">
-                                    <p class="mb-2" id="post-date-text">{{ service.service_date }}</p>
+                                    <p class="mb-2" id="post-date-text">{{ service.service_date }} {{
+                                        service.service_time }}</p>
                                     <h5 class="mb-3" id="service-title">{{ service.service_name }}</h5>
                                     <p class="mb-3" id="service-description">{{ service.service_description }}</p>
                                     <p id="service-user-location-text">{{ service.service_location }}</p>

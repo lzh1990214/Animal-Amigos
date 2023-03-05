@@ -49,7 +49,7 @@
                     <div class="container mt-5 mb-5">
 
                         <div class="d-flex justify-content-center row text-start">
-                            <div class="col-md-10" id="cardsList">
+                            <div class="col-md-10">
                                 <!-- CARD 1 - START-->
                                 {{#each services as |service|}}
                                 {{> each-service}}
@@ -135,7 +135,8 @@
                                         <div class="inputs">
                                             <label>Phone Number</label>
 
-                                            <input class="form-control" type="text" id="phoneNumber" value="{{ phone_number }}">
+                                            <input class="form-control" type="text" id="phoneNumber"
+                                                value="{{ phone_number }}">
 
                                         </div>
                                     </div>

@@ -14,6 +14,7 @@ const editServiceFormHandler = async (event) => {
         const id = event.target.getAttribute('data-id');
 
         if (service_name && service_description) {
+            event.preventDefault();
             // Send a POST request to the API endpoint 
             const response = await fetch(`/api/services/${id}`,
                 {
@@ -35,6 +36,8 @@ const editServiceFormHandler = async (event) => {
 document
     .querySelector('.saveServiceBtn')
     .addEventListener('click', editServiceFormHandler);
+
+
 
 const delButtonHandler = async (event) => {
     event.preventDefault();
@@ -61,10 +64,9 @@ document
 
 // querySelector selecting the entire card list because only ID selector is functional, Class selector is not reliable
 // document
-//     .querySelector('#cardsList')
+//     .querySelector(".deleteBtn")
 //     .addEventListener('click', delButtonHandler);
-
-// document
-//     .querySelector('.deleteServiceBtn')
-//     .addEventListener('click', delButtonHandler);
+// function myFunction() {
+//     alert("Hello! I am an alert box!");
+// };
 
