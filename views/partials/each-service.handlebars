@@ -23,10 +23,10 @@
                     {{!-- <button class="btn btn-primary profile-button" type="button" data-bs-toggle="modal"
                         data-bs-target="#editModal" data-id="{{ id }}">Edit</button> --}}
                     {{!-- <button class="btn btn-primary profile-button" type="button">Pay</button> --}}
-                    {{!-- <button class="btn btn-primary me-md-2 profile-button" type="button" id="delete"
+                    {{!-- <button class="btn btn-primary me-md-2 profile-button" type="button" id="deleteBtn"
                         data-id="{{ id }}">{{id}}Delete</button> --}}
-                    <button class="btn btn-primary me-md-2 profile-button deleteServiceBtn" type="button"
-                        data-id="{{ id }}">Delete</button>
+                    <button class="btn btn-primary me-md-2 profile-button" type="button" data-id="{{ id }}"
+                        value="DeleteBtn" id="delete">Delete</button>
                 </div>
             </div>
         </div>
@@ -75,28 +75,28 @@
                                         <div class="inputs">
                                             <label>Service Name</label>
                                             <input class="form-control" type="text" id="serviceName"
-                                                value="{{ service_name }}">
+                                                value="{{ service_name }}" required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Description</label>
                                             <input class="form-control" type="text" id="serviceDescription"
-                                                value="{{ service_description }}">
+                                                value="{{ service_description }}" required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Price</label>
                                             <input class="form-control" type="text" id="servicePrice"
-                                                value="{{ service_price }}">
+                                                value="{{ service_price }}" required="required">
                                         </div>
                                     </div>
                                     {{!-- <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Status</label>
                                             <input class="form-control" type="text" id="serviceStatus"
-                                                value="{{ service_status }}">
+                                                value="{{ service_status }}" required="required">
                                         </div>
                                     </div> --}}
                                     <div class="mb-3">
@@ -112,22 +112,24 @@
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Date</label>
+
                                             <input class="form-control" type="date" id="serviceDate"
-                                                value="{{ service_date }}">
+                                                value="{{ service_date }}" required="required">
+
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Time</label>
                                             <input class="form-control" type="text" id="serviceTime"
-                                                value="{{ service_time }}">
+                                                value="{{ service_time }}" required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Location</label>
                                             <input class="form-control" type="text" id="serviceLocation"
-                                                value="{{ service_location }}">
+                                                value="{{ service_location }}" required="required">
                                         </div>
                                     </div>
                                     {{!-- <div class="d-flex flex-column mt-4 row">
@@ -153,7 +155,9 @@
 
                         <!-- Modal footer -->
                         <div class="modal-footer">
+
                             <button class="btn btn-primary mt-2 profile-button saveServiceBtn" type="button"
+
                                 data-id="{{ id }}">Save</button>
                             <button class="btn btn-primary mt-2 profile-button" type="button"
                                 data-bs-dismiss="modal">Cancel</button>

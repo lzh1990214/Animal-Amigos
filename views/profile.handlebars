@@ -48,7 +48,7 @@
                     <div class="container mt-5 mb-5">
 
                         <div class="d-flex justify-content-center row text-start">
-                            <div class="col-md-10">
+                            <div class="col-md-10" id="cardsList">
                                 <!-- CARD 1 - START-->
                                 {{#each services as |service|}}
                                 {{> each-service}}
@@ -106,66 +106,70 @@
                                         <div class="inputs">
                                             <label>First Name</label>
                                             <input class="form-control" type="text" id="firstName"
-                                                value="{{ first_name }}">
+                                                value="{{ first_name }}" required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Last Name</label>
                                             <input class="form-control" type="text" id="lastName"
-                                                value="{{ last_name }}">
+                                                value="{{ last_name }}" required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Email</label>
-                                            <input class="form-control" type="text" id="email" value="{{ email }}">
+                                            <input class="form-control" type="text" id="email" value="{{ email }}"
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Password</label>
-                                            <input class="form-control" type="password" id="password">
+                                            <input class="form-control" type="password" id="password"
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Phone Number</label>
+
                                             <input class="form-control" type="text" id="phoneNumber" value="{{ phone_number }}">
+
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Address</label>
-                                            <input class="form-control" type="text" id="address">
+                                            <input class="form-control" type="text" id="address" required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>City</label>
                                             <input class="form-control" type="text" class="form-control" type="text"
-                                                id="city">
+                                                id="city" required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>State</label>
                                             <input class="form-control" type="text" class="form-control" type="text"
-                                                id="state">
+                                                id="state" required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Zip</label>
                                             <input class="form-control" type="text" class="form-control" type="text"
-                                                id="zip">
+                                                id="zip" required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Country</label>
                                             <input class="form-control" type="text" class="form-control" type="text"
-                                                id="country">
+                                                id="country" required="required">
                                         </div>
                                     </div>
                                     {{!-- <div class="d-flex flex-column mt-4 row">
@@ -191,5 +195,5 @@
     </div>
 </div>
 
-
+<script src="/js/editService.js"></script>
 <script src="/js/editProfile.js"></script>

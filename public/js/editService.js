@@ -38,6 +38,7 @@ document
 
 const delButtonHandler = async (event) => {
     event.preventDefault();
+
     if (event.target.hasAttribute('data-id')) {
         event.preventDefault();
         const id = event.target.getAttribute('data-id');
@@ -54,9 +55,16 @@ const delButtonHandler = async (event) => {
 };
 
 // document
-//     .querySelector('#delete')
+//   .querySelector('#delete')
+//    .addEventListener('click', delButtonHandler);
+
+
+// querySelector selecting the entire card list because only ID selector is functional, Class selector is not reliable
+// document
+//     .querySelector('#cardsList')
 //     .addEventListener('click', delButtonHandler);
 
 document
     .querySelector('.deleteServiceBtn')
     .addEventListener('click', delButtonHandler);
+
