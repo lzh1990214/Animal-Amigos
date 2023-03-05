@@ -3,7 +3,7 @@ const Pictures = require('../../models/Pictures');
 const uploader = require('../../utils/upload');
 const path = require('path');
 const multer = require('multer');
-
+const User = require('../../models/User');
 
 
 const storage = multer.diskStorage({
@@ -18,24 +18,36 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 var url = '';
 
-router.post('/pfp', upload.fields([{ name: 'file' }]), async (req, res) => {
+router.post('/', upload.fields([{ name: 'file' }]), async (req, res, next) => {
     try {
+        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' + req.session.user_id)
         uploadedFile = req.files.file[0];
         filename = uploadedFile.filename;
         type = 'pfp';
         url = await uploader.uploadImage(filename, type);
-        console.log('in uploadRoutes.js', url);
-        res.status(200).json(url);
+        const user = await User.update(
+            {
+                profile_picture: url,
+            },
+            {
+                where: {
+                    id: req.session.user_id,
+                }
+            });
+        res.render('profile', user);
+
+
     } catch (error) {
         console.log('uploadRoutes.js error', error);
         throw new Error(error);
     }
+
 });
 
 
 
-
-
-
+router.get('/', async (req, res) => {
+    res.render('upload');
+});
 
 module.exports = router
