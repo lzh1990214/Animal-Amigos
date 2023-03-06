@@ -1,17 +1,21 @@
+const deleteButtons = document.querySelectorAll('.deleteBtn');
+const saveButtons = document.querySelectorAll('.saveServiceBtn');
+
 const editServiceFormHandler = async (event) => {
+    event.preventDefault();
     if (event.target.hasAttribute('data-id')) {
         event.preventDefault();
-
-        // Collect values from the sign up form
-        const service_name = document.querySelector('#serviceName').value.trim();
-        const service_description = document.querySelector('#serviceDescription').value.trim();
-        const service_price = document.querySelector('#servicePrice').value.trim();
-        const service_status = document.querySelector('#status').value.trim();
-        const service_date = document.querySelector('#serviceDate').value.trim();
-        const service_time = document.querySelector('#serviceTime').value.trim();
-        const service_location = document.querySelector('#serviceLocation').value.trim();
-
         const id = event.target.getAttribute('data-id');
+        // console.log(dataID);
+        // Collect values from the sign up form,
+        // ZL: added id numbers after each original id names to collect values from the corresponding forms
+        const service_name = document.querySelector(`#serviceName${id}`).value.trim();
+        const service_description = document.querySelector(`#serviceDescription${id}`).value.trim();
+        const service_price = document.querySelector(`#servicePrice${id}`).value.trim();
+        const service_status = document.querySelector(`#status${id}`).value.trim();
+        const service_date = document.querySelector(`#serviceDate${id}`).value.trim();
+        const service_time = document.querySelector(`#serviceTime${id}`).value.trim();
+        const service_location = document.querySelector(`#serviceLocation${id}`).value.trim();
 
         if (service_name && service_description) {
             event.preventDefault();
@@ -33,10 +37,9 @@ const editServiceFormHandler = async (event) => {
     }
 };
 
-document
-    .querySelector('.saveServiceBtn')
-    .addEventListener('click', editServiceFormHandler);
-
+// document
+//     .querySelector('.saveServiceBtn')
+//     .addEventListener('click', editServiceFormHandler);
 
 
 const delButtonHandler = async (event) => {
@@ -57,16 +60,33 @@ const delButtonHandler = async (event) => {
     }
 };
 
-document
-    .querySelector('#delete')
-    .addEventListener('click', delButtonHandler);
-
-
-// querySelector selecting the entire card list because only ID selector is functional, Class selector is not reliable
 // document
-//     .querySelector(".deleteBtn")
+//     .querySelector('#delete')
 //     .addEventListener('click', delButtonHandler);
-// function myFunction() {
-//     alert("Hello! I am an alert box!");
-// };
 
+// console.log('Failed to delete project');
+// console.log(deleteButtons[0]);
+
+// ZL: apply addEventListener to each delete button
+function addEventListenerDeleteBtn() {
+    // console.log(deleteButtons.length);
+    for (let i = 0; i < deleteButtons.length; i++) {
+        const element = deleteButtons[i];
+        // console.log(element);
+        element.addEventListener('click', delButtonHandler);
+    }
+};
+
+addEventListenerDeleteBtn();
+
+// ZL: apply addEventListener to each save button
+function addEventListenerSaveBtn() {
+    // console.log(deleteButtons.length);
+    for (let i = 0; i < saveButtons.length; i++) {
+        const element = saveButtons[i];
+        // console.log(element);
+        element.addEventListener('click', editServiceFormHandler);
+    }
+};
+
+addEventListenerSaveBtn();
