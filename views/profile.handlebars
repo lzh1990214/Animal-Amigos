@@ -3,15 +3,15 @@
         <div class="col-md-10">
             <div class="card p-3 py-4 mt-4">
 
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="profileBtnGroup">
                     <button class="btn btn-primary px-2 profile-button"
                         onclick="window.location.href='/addservice';">Service Request</button>
-                    <button class="btn btn-primary px-2 ms-1 profile-button" type="button" data-bs-toggle="modal"
+                    <button class="btn btn-primary px-2 profile-button" type="button" data-bs-toggle="modal"
                         data-bs-target="#editProfileModal">Edit</button>
                 </div>
 
-                <div class="position-relative">
-                    <div class="text-center position-absolute top-0 start-50 translate-middle mt-0">
+                <div class="position-relative" id="proPhotoPosition">
+                    <div class="text-center position-absolute top-0 start-50 translate-middle mt-0" >
                         <img src="{{profile_picture}}" class="rounded-circle" id="img-profile-round"
                             onclick="window.location.href='/api/upload';">
                     </div>
@@ -80,11 +80,10 @@
 
                             <div class="col-md-3 card petPhotoCard align-items-center">
 
-                                <img class="card-img-top img-fluid rounded-circle proImage"
-                                    src="{{ profile_picture }}">
+                                <img class="card-img-top img-fluid rounded-circle proImage" src="{{ profile_picture }}">
                                 {{!-- Cloudinary Upload Start --}}
-                                <form class="row signup-text mb-3 mt-1 ms-5 ps-4" action="/api/upload/" method="post"
-                                    enctype="multipart/form-data">
+                                {{!-- <form class="row signup-text mb-3 mt-1 ms-5 ps-4" action="/api/upload/"
+                                    method="post" enctype="multipart/form-data">
                                     <label for="Upload" class="form-label mt-3 fs-6">Upload my Profile Photo</label>
                                     <div class="col-md-12 mb-3">
                                         <input type="file" id="proFile2" name="file">
@@ -92,7 +91,7 @@
                                     <div class="col-md-12">
                                         <input type="submit" id="submitProPic2">
                                     </div>
-                                </form>
+                                </form> --}}
                                 {{!-- Cloudinary Upload End --}}
                             </div>
 
