@@ -18,18 +18,14 @@ const cloudinary = require('cloudinary').v2;
 
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+var PORT = process.env.PORT || 3001;
 
-<<<<<<< Updated upstream
-// get route for homepage
-app.get ('/', (req,res) =>
-res.sendFile(path.join(_dirname, '/public/landing.html'))
-=======
-// get route for home page
-app.get('/', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/landing.html'))
->>>>>>> Stashed changes
-);
+
+// route to home
+routes.get('/', async (req, res) => {
+  res.render('homepage');
+});
+
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
