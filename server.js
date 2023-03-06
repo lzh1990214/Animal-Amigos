@@ -20,13 +20,18 @@ const cloudinary = require('cloudinary').v2;
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// get route for homepage
+app.get ('/', (req,res) =>
+res.sendFile(path.join(_dirname, '/public/landing.html'))
+);
+
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-    maxAge: 1200000,
+    maxAge: 120000,
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
