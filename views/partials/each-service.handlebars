@@ -26,7 +26,7 @@
                     {{!-- <button class="btn btn-primary me-md-2 profile-button" type="button" id="deleteBtn"
                         data-id="{{ id }}">{{id}}Delete</button> --}}
                     <button class="btn btn-primary profile-button deleteBtn" type="button" data-id="{{ id }}"
-                        value="deleteBtn" id="delete">Delete</button>
+                        value="deleteBtn">Delete</button>
                 </div>
             </div>
         </div>
@@ -74,21 +74,21 @@
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Name</label>
-                                            <input class="form-control" type="text" id="serviceName"
+                                            <input class="form-control" type="text" id="serviceName{{id}}"
                                                 value="{{ service_name }}" required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Description</label>
-                                            <input class="form-control" type="text" id="serviceDescription"
+                                            <input class="form-control" type="text" id="serviceDescription{{id}}"
                                                 value="{{ service_description }}" required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Price</label>
-                                            <input class="form-control" type="text" id="servicePrice"
+                                            <input class="form-control" type="text" id="servicePrice{{id}}"
                                                 value="{{ service_price }}" required="required">
                                         </div>
                                     </div>
@@ -102,7 +102,8 @@
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Status</label>
-                                            <select class="form-control form-select" id="status" required="required">
+                                            <select class="form-control form-select" id="status{{id}}"
+                                                required="required">
                                                 <option value="selected">Choose an option*</option>
                                                 <option value="Active">Active</option>
                                                 <option value="Closed">Closed</option>
@@ -114,7 +115,7 @@
                                             <label>Service Date</label>
                                             {{!-- <input class="form-control" type="text" id="serviceDate"
                                                 value="{{ service_date }}" required="required"> --}}
-                                            <input class="form-control" type="date" id="serviceDate"
+                                            <input class="form-control" type="date" id="serviceDate{{id}}"
                                                 value="{{ service_date }}" required="required">
                                         </div>
                                     </div>
@@ -124,13 +125,13 @@
                                             {{!-- <input class="form-control" type="text" id="serviceTime"
                                                 value="{{ service_time }}" required="required"> --}}
                                             <input class="form-control" type="time" placeholder="Enter service time*"
-                                                value="{{ service_time }}" id="serviceTime" required="required">
+                                                id="serviceTime{{id}}" value="{{ service_time }}" required="required">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="inputs">
                                             <label>Service Location</label>
-                                            <input class="form-control" type="text" id="serviceLocation"
+                                            <input class="form-control" type="text" id="serviceLocation{{id}}"
                                                 value="{{ service_location }}" required="required">
                                         </div>
                                     </div>
@@ -159,7 +160,7 @@
                         <div class="modal-footer serviceModal">
 
                             <button class="btn btn-primary mt-2 profile-button saveServiceBtn" type="button"
-                                value="saveBtn" data-id="{{ id }}" data-id-save="{{id}}">Save</button>
+                                value="saveBtn" data-id="{{ id }}">Save</button>
                             <button class="btn btn-primary mt-2 profile-button" type="button"
                                 data-bs-dismiss="modal">Cancel</button>
                         </div>
@@ -172,4 +173,5 @@
 </div>
 <!-- Modal END -->
 
-<script src="/js/editService.js"></script>
+{{!--
+<script src="/js/editService.js"></script> --}}
