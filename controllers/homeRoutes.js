@@ -9,12 +9,20 @@ router.get('/', async (req, res) => {
   res.render('homepage');
 });
 
+// router.get('/login', (req, res) => {
+//   res.render('login');
+// });
+
+// router.get('/signup', (req, res) => {
+//   res.render('signup');
+// });
+
 router.get('/login', (req, res) => {
-  res.render('login');
+  res.render('services');
 });
 
 router.get('/signup', (req, res) => {
-  res.render('signup');
+  res.render('services');
 });
 
 router.get('/profile', withAuth, async (req, res) => {
