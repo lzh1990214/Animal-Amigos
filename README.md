@@ -1,26 +1,77 @@
 # AnimalAmigos
 
-## Team Members
+
+
+## Project Description
+<!-- Need to add project discription -->
+<!-- Add project screen shots -->
+
+## Usage
+
+## Contributors
+### Team Members
 + Brian McDonell
 + Jennilee Messenger
 + Suvarna Jadhav
 + Zhihao Li
 
-## Project Description
+### Github and Heroku Links
+
++ Git Hub - https://github.com/JMess87/AnimalAmigos
++ 2nd Git Hub - https://github.com/lzh1990214/Animal-Amigos 
++ Heroku - 
 
 
++ MySQL2
+https://www.npmjs.com/package/mysql2
++ Sequelize
+https;//sequelize.org/
++ Dotenv
+https://npmjs.com/pakcage/dotenv
++ Express.js
+https://expressjs.com/
++ Cloudinary
+https://cloudinary.com
 
-## Add Links
 
-+ Original Git Hub Repo -
-+ End Version Git Hub Repo-
-+ Heroku - Link
+## License
+
+Unlicensed
+
+## Test
+
+N/A
+
+## Questions
+
+N/A
 
 ## Screenshots
 
+### Install Dependencies
+
+### Create schema in MySQL
 
 
-## Link to video   
+
+
+
+
+
+### Seed the database
+
+### User Table
+
+### Services Table
+
+### Address Table
+
+### Start Server
+
+
+
+### Video Link
+
 
 
 
