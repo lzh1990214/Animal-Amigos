@@ -211,3 +211,110 @@ body {
     border: 0rem;
 }
 
+#welcomeText {
+    color: var(--cat-grey);
+}
+
+@media screen and (max-width: 600px) {
+    #profileBtnGroup {
+        align-content: center;
+        margin-top: 0.25rem;
+    }
+
+    #profileBtnGroup button {
+        margin-left: 0;
+        width: max-content;
+    }
+
+    #proPhotoPosition {
+        margin-top: 6.5rem;
+    }
+
+    #navBarPosition {
+        margin-top: 3rem;
+        margin-left: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    #addServiceBtnGp {
+        justify-content: center;
+        align-items: center;
+    }
+
+    #acceptBtnGroup button {
+        width: 20rem;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    #profileBtnGroup {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        margin-top: 0.25rem;
+    }
+
+    #profileBtnGroup button {
+
+        margin-left: 0;
+        width: 20rem;
+    }
+
+    #proPhotoPosition {
+        margin-top: 6.5rem;
+    }
+
+    #navBarPosition {
+        margin-top: 3rem;
+        margin-left: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    #addServiceBtnGp {
+        justify-content: center;
+        align-items: center;
+    }
+
+    #cardBtnGroupPosition {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #acceptBtnGroup button {
+        width: 15rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #cardBtnGroupPosition {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1.5rem;
+    }
+
+    #cardBtnGroupPosition button {
+        width: 18rem;
+    }
+
+    #acceptBtnGroup {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #acceptBtnGroup button {
+        width: 18rem;
+    }
+}

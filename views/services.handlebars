@@ -1,5 +1,5 @@
 <section class="container text-center">
-    <p>Experience pet-sitting services and events from our furmily and make more friends !</p>
+    <p id="welcomeText">Experience pet-sitting services from our furmily and make more friends !</p>
     <button class="btn btn-primary px-2 profile-button" onclick="window.location.href='/addservice';">Service
         Request</button>
 </section>
@@ -7,7 +7,7 @@
 {{!-- <section class="container-fluid position-relative">
     <div class="row d-flex justify-content-center mt-3"> --}}
 
-        <div class="container mt-5 mb-5">
+        <div class="container mt-4 mb-5">
 
             <div class="d-flex justify-content-center row text-start">
                 <div class="col-md-10 services-list">
@@ -37,14 +37,14 @@
                                     <p class="mb-2 post-date-text">Responder: {{ service.responder_first_name }} {{
                                         responder_last_name }}</p>
                                     {{!-- <p id="service_id">Here : {{ id }}</p> --}}
-                                    <div class="d-grid gap-2 d-md-flex mt-3 mb-3">
+                                    <div class="d-grid gap-2 d-md-flex mt-3 mb-3" id="acceptBtnGroup">
                                         <button
                                             class="btn {{#if service.responder }} btn-secondary {{else}} btn-primary profile-button {{/if}}"
                                             id="accept" type="button" data-id="{{ service.id }}" {{#if service.responder
                                             }} disabled {{/if}}>Accept</button>
                                         {{!-- <button class="btn btn-primary profile-button" type="button">Pay</button>
                                         --}}
-                                        <button class="btn btn-primary me-md-2 profile-button" type="button"><a
+                                        <button class="btn btn-primary profile-button" type="button"><a
                                                 href="mailto:{{ user.email }}" style="color: white;">
                                                 Contact</a></button>
                                     </div>

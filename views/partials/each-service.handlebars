@@ -17,15 +17,15 @@
                 <p class="mb-2 fw-bold post-date-text">Status: {{ service_status }}</p>
                 {{!-- <p class="mb-2" id="post-date-text">Requester: {{ user.first_name }} {{ user.last_name }}</p> --}}
                 <p class="mb-2 post-date-text">Responder: {{ responder_first_name }} {{ responder_last_name }}</p>
-                <div class="d-grid gap-2 d-md-flex mt-3 mb-3">
-                    <button class="btn btn-primary profile-button me-2" type="button" data-bs-toggle="modal"
+                <div class="d-grid gap-2 d-md-flex mt-3 mb-3" id="cardBtnGroupPosition">
+                    <button class="btn btn-primary profile-button" type="button" data-bs-toggle="modal"
                         data-bs-target="#editModal-{{ id }}" data-id="{{ id }}">Edit</button>
                     {{!-- <button class="btn btn-primary profile-button" type="button" data-bs-toggle="modal"
                         data-bs-target="#editModal" data-id="{{ id }}">Edit</button> --}}
                     {{!-- <button class="btn btn-primary profile-button" type="button">Pay</button> --}}
                     {{!-- <button class="btn btn-primary me-md-2 profile-button" type="button" id="deleteBtn"
                         data-id="{{ id }}">{{id}}Delete</button> --}}
-                    <button class="btn btn-primary me-md-2 profile-button deleteBtn" type="button" data-id="{{ id }}"
+                    <button class="btn btn-primary profile-button deleteBtn" type="button" data-id="{{ id }}"
                         value="deleteBtn" id="delete">Delete</button>
                 </div>
             </div>
@@ -49,8 +49,8 @@
                             <div class="col-md-3 card petPhotoCard align-items-center">
                                 <img class="card-img-top img-fluid rounded-circle proImage" src="{{ service_picture }}">
                                 {{!-- Cloudinary Upload Start --}}
-                                <form class="row signup-text mb-3 mt-1 ms-5 ps-4" action="/api/upload/" method="post"
-                                    enctype="multipart/form-data">
+                                {{!-- <form class="row signup-text mb-3 mt-1 ms-5 ps-4" action="/api/upload/"
+                                    method="post" enctype="multipart/form-data">
                                     <label for="Upload" class="form-label mt-3 fs-6">Upload my Pet Photo</label>
                                     <div class="col-md-12 mb-3">
                                         <input type="file" id="proFile" name="file">
@@ -58,12 +58,12 @@
                                     <div class="col-md-12">
                                         <input type="submit" id="submitPetPic">
                                     </div>
-                                </form>
+                                </form> --}}
                                 {{!-- Cloudinary Upload End --}}
                             </div>
 
                             <!-- comments information -->
-                            <div class="col-md-6 mt-1 text-start">
+                            <div class="col-md-6 mt-4 text-start">
                                 <p class="mb-2" id="post-date-text">Date: {{ service_date }} {{ service_time }}</p>
                                 <h5 class="mb-3" id="service-title">Title: {{ service_name }}</h5>
                                 <p class="mb-3" id="service-description">Description: {{ service_description }}</p>
@@ -143,8 +143,8 @@
                             </div>
 
                             <!-- side information and buttons -->
-                            <div class="col-md-3">
-                                <div class="card-body mt-0">
+                            <div class="col-md-3 mt-2">
+                                <div class="card-body">
                                     <h4 class="service-points">{{ service_price }}<span class="fs-6">$</span></h4>
                                     <p class="mb-2 fw-bold post-date-text">Status: {{ service_status }}</p>
                                     {{!-- <p class="mb-2 post-date-text">Requester: Jennilee</p> --}}
