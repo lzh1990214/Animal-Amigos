@@ -39,9 +39,13 @@ router.get('/:id', async (req, res) => {
 
 router.post('/addservice', async (req, res) => {
     try {
+
+        const user = await User.findOne({ where: { id: req.session.user_id } });
+        const userData = user.get({ plain: true });
+
         const service = await Service.create({
             requester: req.session.user_id,
-
+            service_picture: userData.profile_picture,
             responder: null,
             responder_first_name: "",
             responder_last_name: "",
