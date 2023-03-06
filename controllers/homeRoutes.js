@@ -18,11 +18,11 @@ router.get('/', async (req, res) => {
 // });
 
 router.get('/login', (req, res) => {
-  res.render('homepage');
+  res.render('profile');
 });
 
 router.get('/signup', (req, res) => {
-  res.render('homepage');
+  res.render('profile');
 });
 
 router.get('/profile', withAuth, async (req, res) => {
@@ -34,10 +34,10 @@ router.get('/profile', withAuth, async (req, res) => {
       },
       {
         model: Services
-        },
-        {
-          model: Address
-        }
+      },
+      {
+        model: Address
+      }
       ]
     });
     if (!userData) {
@@ -55,7 +55,7 @@ router.get('/profile', withAuth, async (req, res) => {
   };
 });
 
-router.get('/addservice', withAuth ,async (req, res) => {
+router.get('/addservice', withAuth, async (req, res) => {
   res.render('addservice');
 });
 
