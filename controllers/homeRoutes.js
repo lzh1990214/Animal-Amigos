@@ -18,11 +18,11 @@ router.get('/', async (req, res) => {
 // });
 
 router.get('/login', (req, res) => {
-  res.render('services');
+  res.render('homepage');
 });
 
 router.get('/signup', (req, res) => {
-  res.render('services');
+  res.render('homepage');
 });
 
 router.get('/profile', withAuth, async (req, res) => {
