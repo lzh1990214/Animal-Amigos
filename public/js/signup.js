@@ -14,7 +14,6 @@ const signupFormHandler = async (event) => {
     const answer2 = document.querySelector('#answer2').value.trim();
     const question3 = document.querySelector('#question3').value.trim();
     const answer3 = document.querySelector('#answer3').value.trim();
-    const profile_picture = 'placeholder'
     // let is_owner;
 
     // if (owner === 'Y') {
@@ -39,33 +38,6 @@ const signupFormHandler = async (event) => {
         }
     }
 };
-
-// const uploadProPic = async (event) => {
-
-//     event.preventDefault();
-//     const formData = new FormData();
-//     formData.append('file', document.querySelector('#proFile').files[0]);
-//     const proPicUrl = await fetch('/api/upload/pfp', {
-//         method: 'POST',
-//         body: formData
-//     },
-//         {
-//             headers: { 'Content-Type': 'multipart/form-data' }
-//         });
-//     console.log('in uploadProPic', proPicUrl)
-//     proPicUrl.then(data => {
-//         console.log(data);
-//         // profile_picture = data;
-//     }
-//     );
-
-// }
-
-
-
-// document.querySelector('#proPicForm').addEventListener('submit', uploadProPic);
-
-
 
 document
     .querySelector('.signup-form')

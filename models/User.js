@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class User extends Model { 
+class User extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
@@ -43,6 +43,7 @@ User.init(
     profile_picture: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: 'https://res.cloudinary.com/dx6nv04ky/image/upload/v1678057286/depositphotos_137014128-stock-illustration-user-profile-icon_k6kvly.webp',
     }
   },
   {
