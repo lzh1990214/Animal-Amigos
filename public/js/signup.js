@@ -36,7 +36,7 @@ const signupFormHandler = async (event) => {
             // document.location.replace('/profile');
             document.location.replace('/');
             alert('Successfully created an account !');
-            ////text
+
         } else {
             alert(response.statusText);
         }
