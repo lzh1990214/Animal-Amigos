@@ -70,6 +70,7 @@ body {
 
 #landing-card {
     border: 0;
+    padding: 0;
 }
 
 /* profile_service page style */
@@ -247,6 +248,28 @@ body {
     #acceptBtnGroup button {
         width: 20rem;
     }
+
+    #landing-title {
+        font-family: var(--logo-title-font-family);
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--landing-title-color);
+    }
+
+    .navbar-brand {
+        display: none;
+    }
+
+    .landing-main {
+        margin-top: 5rem;
+    }
+
+    #landing-description {
+        font-family: var(--logo-title-font-family);
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: var(--landing-title-color);
+    }
 }
 
 
@@ -259,7 +282,6 @@ body {
     }
 
     #profileBtnGroup button {
-
         margin-left: 0;
         width: 20rem;
     }
@@ -316,5 +338,9 @@ body {
 
     #acceptBtnGroup button {
         width: 18rem;
+    }
+
+    .navbar-brand {
+        display: none;
     }
 }
